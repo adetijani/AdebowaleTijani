@@ -1,0 +1,296 @@
+{
+	"name": "composer",
+	"displayName": "Composer",
+	"description": "PHP Composer for Visual Studio Code",
+	"version": "0.8.0",
+	"author": "Ioannis Kappas",
+	"publisher": "ikappas",
+	"license": "MIT",
+	"icon": "composer.png",
+	"galleryBanner": {
+		"color": "#6082bb",
+		"theme": "dark"
+	},
+	"homepage": "https://github.com/ikappas/vscode-composer/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ikappas/vscode-composer.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ikappas/vscode-composer/issues"
+	},
+	"categories": [
+		"Programming Languages",
+		"Linters"
+	],
+	"keywords": [
+		"php",
+		"composer",
+		"dependency",
+		"manager",
+		"multi-root ready"
+	],
+	"engines": {
+		"vscode": "^1.40.0"
+	},
+	"extensionKind": [
+		"workspace"
+	],
+	"activationEvents": [
+		"onCommand:composer.About",
+		"onCommand:composer.Archive",
+		"onCommand:composer.ClearCache",
+		"onCommand:composer.Depends",
+		"onCommand:composer.Diagnose",
+		"onCommand:composer.DumpAutoload",
+		"onCommand:composer.Fund",
+		"onCommand:composer.Init",
+		"onCommand:composer.Install",
+		"onCommand:composer.Licenses",
+		"onCommand:composer.Outdated",
+		"onCommand:composer.Prohibits",
+		"onCommand:composer.Remove",
+		"onCommand:composer.Require",
+		"onCommand:composer.RunScript",
+		"onCommand:composer.SelfUpdate",
+		"onCommand:composer.Show",
+		"onCommand:composer.Status",
+		"onCommand:composer.Suggests",
+		"onCommand:composer.Update",
+		"onCommand:composer.Validate",
+		"onCommand:composer.Version",
+		"onCommand:composer.Why",
+		"onCommand:composer.WhyNot"
+	],
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Composer Dependency Manager for PHP Configuration",
+			"properties": {
+				"composer.enabled": {
+					"scope": "window",
+					"type": "boolean",
+					"default": true,
+					"description": "Is composer enabled."
+				},
+				"composer.executablePath": {
+					"scope": "resource",
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null,
+					"description": "Path to the composer executable."
+				},
+				"composer.ignorePlatformReqs": {
+					"scope": "window",
+					"type": "boolean",
+					"default": false,
+					"description": "Ignore all platform requirements (php, hhvm, lib-* and ext-*) and force the installation even if the local machine does not fulfill these."
+				},
+				"composer.runInTerminal": {
+					"scope": "window",
+					"type": "boolean",
+					"default": true,
+					"description": "Run composer commands in a terminal, otherwise shows the output in the output panel."
+				},
+				"composer.runQuiet": {
+					"scope": "window",
+					"type": "boolean",
+					"default": false,
+					"description": "run composer commands with the `--quiet` option."
+				},
+				"composer.workingPath": {
+					"scope": "resource",
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null,
+					"description": "Path to the composer.json file."
+				}
+			}
+		},
+		"jsonValidation": [
+			{
+				"fileMatch": "composer.json",
+				"url": "https://raw.githubusercontent.com/composer/composer/master/res/composer-schema.json"
+			}
+		],
+		"commands": [
+			{
+				"command": "composer.About",
+				"title": "About",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Archive",
+				"title": "Archive",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.ClearCache",
+				"title": "Clear Cache",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Depends",
+				"title": "Depends",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Diagnose",
+				"title": "Diagnose",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.DumpAutoload",
+				"title": "Dump Autoloader",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Fund",
+				"title": "Fund",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Init",
+				"title": "Init",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Install",
+				"title": "Install",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Licenses",
+				"title": "Licenses",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Outdated",
+				"title": "Outdated",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Prohibits",
+				"title": "Prohibits",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Remove",
+				"title": "Remove",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Require",
+				"title": "Require",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.RunScript",
+				"title": "Run Script",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.SelfUpdate",
+				"title": "Self Update",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Show",
+				"title": "Show",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Status",
+				"title": "Status",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Suggests",
+				"title": "Suggests",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Update",
+				"title": "Update",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Validate",
+				"title": "Validate",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Version",
+				"title": "Version",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.Why",
+				"title": "Why",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			},
+			{
+				"command": "composer.WhyNot",
+				"title": "WhyNot",
+				"category": "Composer",
+				"enablement": "config.composer.enabled"
+			}
+		]
+	},
+	"main": "./out/main.js",
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -watch -p ./"
+	},
+	"dependencies": {
+		"run-in-terminal": "^0.0.3"
+	},
+	"devDependencies": {
+		"@types/node": "^17.0.23",
+		"@types/vscode": "^1.40.0",
+		"@typescript-eslint/eslint-plugin": "^5.17.0",
+		"@typescript-eslint/parser": "^5.17.0",
+		"eslint": "^8.12.0",
+		"typescript": "^4.6.3"
+	},
+	"__metadata": {
+		"id": "d1d38669-b95b-4592-be08-47526ef8b730",
+		"publisherId": "bc9cf215-ec5e-4767-8196-eb73d1ced313",
+		"publisherDisplayName": "Ioannis Kappas",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1705490951852,
+		"pinned": false,
+		"preRelease": false
+	}
+}

@@ -1,0 +1,1 @@
+const c=/^(\$|_|vm)/i;function t(r,n){for(const e of Object.keys(r))e.match(c)||n[e]===void 0&&(n[e]=null);r.$patch(n)}function i(r){return JSON.parse(JSON.stringify(r,(n,e)=>n.match(c)?null:e))}export{i as c,t as r};
